@@ -1,0 +1,20 @@
+{
+  "name": "bower-packages",
+  "version": "0.1.0",
+  "description": "Bower Dependecies",
+  "authors": [
+    "Matthew Bozelka"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "font-awesome": "~4.3.0"
+  }
+}
