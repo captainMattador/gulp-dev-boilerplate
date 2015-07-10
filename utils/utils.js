@@ -72,7 +72,7 @@ function changeEvent(event){
 
     var srcPattern = new RegExp('/.*(?=/' + config.source + ')/');
 
-    utilities.log('File ' + event.path.replace(srcPattern, '') + ' ' + event.type);
+    utilities.log('UTILS: File ' + event.path.replace(srcPattern, '') + ' ' + event.type);
 }
 
 function startBrowserSync(isDev){
@@ -84,7 +84,13 @@ function startBrowserSync(isDev){
     utilities.log('Starting Browser-syn on port ' + config.port);
 
     if(isDev){
-        gulp.watch(config.sass, ['compile-sass'])
+        gulp
+            .watch(config.sass, ['compile-sass'])
+            .on('change', function(event){
+                changeEvent(event);
+            });
+        gulp
+            .watch(config.typescript, ['compile-ts'])
             .on('change', function(event){
                 changeEvent(event);
             });
@@ -100,8 +106,9 @@ function startBrowserSync(isDev){
         port: 3000,
         files: isDev ? [
             config.client + '**/*.*',
-            '!' + config.sass,
-            config.temp + '**/*.css'
+            config.temp + '**/*.css',
+            '!src/client/sass/**/*.scss',
+            '!src/client/typescript/**/*.ts'
         ] : [],
         ghostMode: {
             clicks: true,
