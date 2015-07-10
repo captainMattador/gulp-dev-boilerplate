@@ -8,7 +8,7 @@ It mostly assumes the use of AngularJs but is not required. It also has support 
 Getting Started
 -------------
 
-required Globally: Node.js, Bower.io, Nodemon.io
+Required Globally: Node.js, Bower.io, Nodemon.io.
 
 Navigate to the folder you want to store your project, then:
 
