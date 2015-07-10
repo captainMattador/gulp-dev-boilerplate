@@ -8,38 +8,46 @@ It mostly assumes the use of AngularJs but is not required. It also has support 
 Getting Started
 -------------
 
+required Globally: Node.js, Bower.io, Nodemon.io
+
 Navigate to the folder you want to store your project, then:
 
-git clone https://github.com/captainMattador/gulp-dev-boilerplate.git your-project-name
+`git clone https://github.com/captainMattador/gulp-dev-boilerplate.git your-project-name`
 
 Run npm install to get all dependencies
 
-npm install
+`npm install`
 
 Run bower install to get AngularJs and Font Awesome (or use bower to get the required libraries for your project)
 
-bower install
+`bower install`
 
 
 Documentation
 -------------
 
-Run 'gulp' or 'gulp help' in the CLI to see gulp tasks.
+Run `gulp` or `gulp help` in the CLI to see gulp tasks.
 
-Current tasks
+Most important tasks:
 
-gulp bump-version: updates the verioning of your project.
+`gulp serve-dev`: Start a localhost node server for dev build. This will launch your browser for as well.
 
-gulp inject-js: Inject all your working js into the src html (includening bower libraries components).
+`gulp serve-dist`: Start a localhost node server for distrobution build. This will launch your browser for as well.
 
-gulp inject-all: Inject all your working js and css into src html (this will also compile your sass before hand).
+`gulp bump-version`: updates the verioning of your project.
 
-gulp sass-watcher: Watch your sass files as you work.
+`gulp inject-js`: Inject all your working js into the src html (includening bower libraries components).
 
-gulp compile-sass: Compile sass.
+`gulp inject-all`: Inject all your working js and css into src html (this will also compile your sass before hand).
 
-gulp compile-ts: Compiles your src typescript files and places the js in it's own folder of the same name (assumes your ts files are modules). Example: maps.ts -> "src/client/app/maps/maps.module.js"
+`gulp sass-watcher`: Watch your sass files for chanes and recompile.
 
-gulp template-cache: caches all html templates inside of "src/client/app/", places compiles them into a js file and adds them to Angulars Template Cache (used for production code).
+`gulp compile-sass`: Compile sass.
 
-gulp optimize-dist: optimizes all js and css and places it into the dist folder for production ready code. Also moves over all images (and optimizes them) and fonts.
+`gulp compile-ts`: Compiles your src typescript files and mirrors the folder structure into the app folder.
+
+`gulp ts-watcher`: Watch your typescript files for changes and recompile.
+
+`gulp template-cache`: caches all html templates inside of "src/client/app/", places compiles them into a js file and adds them to Angulars Template Cache (used for production code).
+
+`gulp optimize-dist`: optimizes all js and css and places it into the dist folder for production ready code. Also moves over all images (and optimizes them) and fonts.
