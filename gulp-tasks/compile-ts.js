@@ -12,8 +12,8 @@ gulp.task('compile-ts', function(){
     return gulp
         .src(config.typescript)
         .pipe($.rename(function(path){
-            path.dirname += '/' + path.basename;
-            path.basename += '.module';
+            path.dirname = path.dirname;
+            path.basename = path.basename;
         }))
         .pipe($.typescript())
         .pipe(gulp.dest(config.clientApp));

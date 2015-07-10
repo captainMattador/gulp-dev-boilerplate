@@ -35,3 +35,10 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Project specific files #
+##########################
+/node_modules/*
+/bower_components/*
+/.tmp/*
+/dist/*
