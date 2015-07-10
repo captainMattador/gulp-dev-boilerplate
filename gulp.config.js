@@ -5,8 +5,10 @@ module.exports = function(){
 
     var client = './src/client/',
         clientApp = client + 'app/',
+        defaultPort = 7203,
         dist = './dist/',
         root = './',
+        server = './src/server/',
         temp = './.tmp/';
 
     var config = {
@@ -33,6 +35,8 @@ module.exports = function(){
             ignorePath: '../..'
         },
 
+        browserReloadDelay: 1000,
+
         client: client,
 
         clientApp: clientApp,
@@ -43,22 +47,30 @@ module.exports = function(){
 
         fonts: './bower_components/font-awesome/fonts/**/*.*',
 
+        html: client + '**/*.html',
+
         htmltemplates: clientApp + '**/*.html',
 
         images: client + 'images/**/*.*',
 
         index: client + 'index.html',
 
+        nodeServer: server + 'app.js',
+
         packages: [
             root + 'package.json',
             root + 'bower.json'
         ],
+
+        port: process.env.PORT || defaultPort,
 
         root: root,
 
         sass: [
             client + 'sass/styles.scss'
         ],
+
+        server: server,
 
         temp: temp,
 

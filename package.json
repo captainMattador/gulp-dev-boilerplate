@@ -12,8 +12,11 @@
     "url": "https://github.com/captainMattador/gulp-dev-boilerplate.git"
   },
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.13.1"
+  },
   "devDependencies": {
+    "browser-sync": "^2.7.13",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.7.0",
