@@ -26,7 +26,9 @@ module.exports = function(){
             clientApp + '**/*.directive.js',
             clientApp + '**/*.template.js',
             clientApp + '**/*.js',
-            '!' + clientApp + '**/*.spec.js'
+            '!' + clientApp + '**/*.spec.js',
+            '!' + clientApp + 'test/**/*.*',
+            '!' + clientApp + 'example/**/*.*'
         ],
 
         bower: {
@@ -83,7 +85,10 @@ module.exports = function(){
             }
         },
 
-        typescript: client + 'typescript/**/*.ts'
+        typescript: [
+            client + 'typescript/**/*.ts',
+            '!' + client + 'typescript/test/**/*.*'
+        ]
     };
 
     config.getWiredepDefaultOptions = function(){

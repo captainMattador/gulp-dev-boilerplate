@@ -5,7 +5,7 @@ var config = require('../gulp.config')(),
     utils = require('../utils/utils'),
     $ = require('gulp-load-plugins')({lazy: true});
 
-gulp.task('inject-js', function(){
+gulp.task('inject-js', ['compile-ts'], function(){
 
     utils.log('HTML Injection: js into src environment.');
 
